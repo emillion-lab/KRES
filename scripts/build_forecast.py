@@ -3,18 +3,23 @@
 Пуска се от Actions веднъж на 24ч. Работи от ден 1 (graceful с малко данни),
 upgrade-ва се автоматично към по-фини baseline-и с натрупване на история.
 Никъде не се предполага ПРИЧИНА за забавяне — само дали е статистически
-необичайно спрямо ден/час/дъжд."""
+необичайно спрямо ден/час/дъжд.
+
+Часова зона: Europe/Sofia през zoneinfo (не ръчен +3) — за да не се разсинхронизира
+тихо при преминаване на зимно часово време (края на октомври)."""
 import glob
 import json
 import statistics
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 MIN_DAYS_FOR_BASELINE = 14
 MIN_DAYS_FOR_PATTERNS = 21
 SLOT_MIN = 15  # резолюция на деня в минути
+SOFIA = ZoneInfo("Europe/Sofia")
 
 
 def load_history():
@@ -32,7 +37,7 @@ def load_history():
 
 def to_local(ts_iso):
     dt = datetime.fromisoformat(ts_iso.replace("Z", "+00:00"))
-    return dt + timedelta(hours=3)  # София, приблизително (без DST нюанси)
+    return dt.astimezone(SOFIA)
 
 
 def slot_key(dt):
@@ -111,6 +116,30 @@ def detect_patterns(rows):
             "flagged_slots": flagged[:10]}
 
 
+def load_historic_fallback():
+    """Ако още нямаме достатъчно жива история, ползваме TomTom-овия
+    исторически модел (fetch_historic_profile.py) като временен baseline —
+    ясно маркиран като чужд източник, не наш."""
+    p = DATA_DIR / "historic_profile.json"
+    if not p.exists():
+        return None
+    data = json.loads(p.read_text(encoding="utf-8"))
+    pts = data.get("points", [])
+    if not pts:
+        return None
+    days_idx = {"Пон": 0, "Вт": 1, "Ср": 2, "Чет": 3, "Пет": 4, "Съб": 5, "Нед": 6}
+    baseline = {}
+    for pt in pts:
+        wd = days_idx.get(pt["weekday"])
+        if wd is None:
+            continue
+        slot = (pt["hour"] * 60) // SLOT_MIN
+        key = f"{wd}:{slot}"
+        # ако вече има запис (от другата посока), взимаме по-лошия — по-безопасно
+        baseline[key] = max(baseline.get(key, 0), pt["delay_min"])
+    return {"baseline": baseline, "generated": data.get("generated")}
+
+
 def main():
     rows = load_history()
     days_collected = len({to_local(r["ts"]).date() for r in rows if r.get("ts")})
@@ -119,9 +148,19 @@ def main():
            "days_collected": days_collected}
 
     if days_collected < MIN_DAYS_FOR_BASELINE:
-        out["status"] = "insufficient_data"
-        out["days_needed"] = MIN_DAYS_FOR_BASELINE
-        out["best_windows"] = []
+        fallback = load_historic_fallback()
+        if fallback:
+            out["status"] = "using_tomtom_historic_model"
+            out["days_needed_for_own_baseline"] = MIN_DAYS_FOR_BASELINE
+            out["source_note"] = ("Все още няма достатъчно жива история — "
+                                   "прозорците са от TomTom-ов изгладен модел, "
+                                   f"генериран {fallback['generated']}. "
+                                   "Няма да хване еднократни инциденти.")
+            out["best_windows"] = best_windows(fallback["baseline"])
+        else:
+            out["status"] = "insufficient_data"
+            out["days_needed"] = MIN_DAYS_FOR_BASELINE
+            out["best_windows"] = []
     else:
         baseline = build_baseline(rows)
         out["status"] = "ok"
