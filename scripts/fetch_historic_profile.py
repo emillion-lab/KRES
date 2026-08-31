@@ -5,9 +5,12 @@
 Двете посоки поотделно — дефилето е асиметрично (петък следобед юг,
 неделя вечер север).
 
-Часова зона: Europe/Sofia през zoneinfo (не ръчен +3) — за да не се разсинхронизира
-тихо при преминаване на зимно часово време (края на октомври)."""
+Часова зона: Europe/Sofia през zoneinfo (не ръчен +3).
+
+ДИАГНОСТИКА: грешките се записват В САМИЯ JSON (не само print), защото
+нямаме достъп до суровия Actions лог отвън."""
 import json
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta
@@ -31,53 +34,79 @@ def next_monday():
 
 
 def fetch_one(frm, to, depart_local):
-    # isoformat() на tz-aware datetime сам вади верния офсет (+02:00 / +03:00)
-    # спрямо конкретната дата — DST се решава от zoneinfo, не от нас.
     depart_str = depart_local.isoformat(timespec="seconds")
     q = urllib.parse.urlencode({"from": frm, "to": to, "departAt": depart_str})
-    with urllib.request.urlopen(f"{PROXY}?{q}", timeout=25) as r:
-        return json.load(r)
+    full_url = f"{PROXY}?{q}"
+    try:
+        with urllib.request.urlopen(full_url, timeout=25) as r:
+            return json.load(r), None
+    except urllib.error.HTTPError as e:
+        body = ""
+        try:
+            body = e.read().decode("utf-8", "replace")[:300]
+        except Exception:
+            pass
+        return None, {"kind": "HTTPError", "status": e.code, "body": body, "url": full_url}
+    except urllib.error.URLError as e:
+        return None, {"kind": "URLError", "reason": str(e.reason), "url": full_url}
+    except Exception as e:
+        return None, {"kind": type(e).__name__, "msg": str(e)[:300], "url": full_url}
 
 
 def sweep():
     start = next_monday()
     points = []
+    errors = []
     for direction, frm, to in [("south_Kulata", SIMITLI, KRESNA),
                                 ("north_Sofia", KRESNA, SIMITLI)]:
         for day_offset in range(7):
             day = start + timedelta(days=day_offset)
             for hour in range(24):
                 depart = day.replace(hour=hour)
-                try:
-                    d = fetch_one(frm, to, depart)
-                    if d.get("err"):
-                        continue
-                    hist_s = d.get("hist_s")
-                    free_s = d.get("free_s")
-                    if hist_s is None or free_s is None:
-                        continue
-                    points.append({
-                        "direction": direction,
-                        "weekday": DAYS[day.weekday()],
-                        "hour": hour,
-                        "hist_s": hist_s, "free_s": free_s,
-                        "delay_min": round((hist_s - free_s) / 60, 1),
-                    })
-                except Exception as e:
-                    print(f"!! {direction} {day.weekday()} {hour}:00 — {e}")
-    return points
+                d, err = fetch_one(frm, to, depart)
+                if err:
+                    if len(errors) < 5:  # само първите 5 — да не удавим JSON-а
+                        errors.append({**err, "direction": direction,
+                                        "weekday": DAYS[day.weekday()], "hour": hour})
+                    continue
+                if d.get("err"):
+                    if len(errors) < 5:
+                        errors.append({"kind": "api_err", "detail": d,
+                                        "direction": direction,
+                                        "weekday": DAYS[day.weekday()], "hour": hour})
+                    continue
+                hist_s = d.get("hist_s")
+                free_s = d.get("free_s")
+                if hist_s is None or free_s is None:
+                    if len(errors) < 5:
+                        errors.append({"kind": "missing_fields", "detail": d,
+                                        "direction": direction,
+                                        "weekday": DAYS[day.weekday()], "hour": hour})
+                    continue
+                points.append({
+                    "direction": direction,
+                    "weekday": DAYS[day.weekday()],
+                    "hour": hour,
+                    "hist_s": hist_s, "free_s": free_s,
+                    "delay_min": round((hist_s - free_s) / 60, 1),
+                })
+    return points, errors, len(errors) > 0 and len(points) == 0
 
 
 def main():
-    points = sweep()
+    points, errors, _ = sweep()
     out = {"generated": datetime.now(SOFIA).isoformat(),
            "source": "tomtom_historic_model",
            "note": "TomTom-ов изгладен профил, не собствено събрани данни. "
                    "Не хваща еднократни инциденти (срутвания, ПТП).",
            "points": points}
+    if errors:
+        out["_debug_first_errors"] = errors
+        out["_debug_total_calls"] = 336
+        out["_debug_points_ok"] = len(points)
     Path("data/historic_profile.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f">> Записани {len(points)} точки в data/historic_profile.json")
+    print(f">> Записани {len(points)} точки, {len(errors)} грешки (първите) в data/historic_profile.json")
 
 
 if __name__ == "__main__":
