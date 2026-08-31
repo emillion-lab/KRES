@@ -3,23 +3,27 @@
 през /traffic-historic. Дава веднага "типична седмица" по час/ден, докато
 собственият ни колектор трупа реална история напред.
 Двете посоки поотделно — дефилето е асиметрично (петък следобед юг,
-неделя вечер север)."""
+неделя вечер север).
+
+Часова зона: Europe/Sofia през zoneinfo (не ръчен +3) — за да не се разсинхронизира
+тихо при преминаване на зимно часово време (края на октомври)."""
 import json
 import urllib.parse
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 PROXY = "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic"
 SIMITLI = "41.8830,23.1122"
 KRESNA = "41.7286,23.1553"
-SOFIA_OFFSET = "+03:00"
+SOFIA = ZoneInfo("Europe/Sofia")
 
 DAYS = ["Пон", "Вт", "Ср", "Чет", "Пет", "Съб", "Нед"]
 
 
 def next_monday():
-    now = datetime.now(timezone.utc) + timedelta(hours=3)
+    now = datetime.now(SOFIA)
     days_ahead = (7 - now.weekday()) % 7 or 7
     monday = (now + timedelta(days=days_ahead)).replace(
         hour=0, minute=0, second=0, microsecond=0)
@@ -27,7 +31,9 @@ def next_monday():
 
 
 def fetch_one(frm, to, depart_local):
-    depart_str = depart_local.strftime("%Y-%m-%dT%H:%M:%S") + SOFIA_OFFSET
+    # isoformat() на tz-aware datetime сам вади верния офсет (+02:00 / +03:00)
+    # спрямо конкретната дата — DST се решава от zoneinfo, не от нас.
+    depart_str = depart_local.isoformat(timespec="seconds")
     q = urllib.parse.urlencode({"from": frm, "to": to, "departAt": depart_str})
     with urllib.request.urlopen(f"{PROXY}?{q}", timeout=25) as r:
         return json.load(r)
@@ -64,7 +70,7 @@ def sweep():
 
 def main():
     points = sweep()
-    out = {"generated": datetime.now(timezone.utc).isoformat(),
+    out = {"generated": datetime.now(SOFIA).isoformat(),
            "source": "tomtom_historic_model",
            "note": "TomTom-ов изгладен профил, не собствено събрани данни. "
                    "Не хваща еднократни инциденти (срутвания, ПТП).",
