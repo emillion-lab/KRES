@@ -1,55 +1,2695 @@
 {
-  "generated": "2026-09-01T00:17:36.272728+03:00",
+  "generated": "2026-09-01T00:24:56.236044+03:00",
   "source": "tomtom_historic_model",
   "note": "TomTom-ов изгладен профил, не собствено събрани данни. Не хваща еднократни инциденти (срутвания, ПТП).",
-  "points": [],
-  "_debug_first_errors": [
+  "points": [
     {
-      "kind": "HTTPError",
-      "status": 403,
-      "body": "error code: 1010\n",
-      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T00%3A00%3A00%2B03%3A00",
       "direction": "south_Kulata",
       "weekday": "Пон",
-      "hour": 0
+      "hour": 0,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
     },
     {
-      "kind": "HTTPError",
-      "status": 403,
-      "body": "error code: 1010\n",
-      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T01%3A00%3A00%2B03%3A00",
       "direction": "south_Kulata",
       "weekday": "Пон",
-      "hour": 1
+      "hour": 1,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
     },
     {
-      "kind": "HTTPError",
-      "status": 403,
-      "body": "error code: 1010\n",
-      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T02%3A00%3A00%2B03%3A00",
       "direction": "south_Kulata",
       "weekday": "Пон",
-      "hour": 2
+      "hour": 2,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
     },
     {
-      "kind": "HTTPError",
-      "status": 403,
-      "body": "error code: 1010\n",
-      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T03%3A00%3A00%2B03%3A00",
       "direction": "south_Kulata",
       "weekday": "Пон",
-      "hour": 3
+      "hour": 3,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
     },
     {
-      "kind": "HTTPError",
-      "status": 403,
-      "body": "error code: 1010\n",
-      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T04%3A00%3A00%2B03%3A00",
       "direction": "south_Kulata",
       "weekday": "Пон",
-      "hour": 4
+      "hour": 4,
+      "hist_s": 1982,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 5,
+      "hist_s": 1996,
+      "free_s": 1965,
+      "delay_min": 0.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 6,
+      "hist_s": 2033,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 7,
+      "hist_s": 2087,
+      "free_s": 1965,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 8,
+      "hist_s": 2131,
+      "free_s": 1965,
+      "delay_min": 2.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 9,
+      "hist_s": 2167,
+      "free_s": 1965,
+      "delay_min": 3.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 10,
+      "hist_s": 2193,
+      "free_s": 1965,
+      "delay_min": 3.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 11,
+      "hist_s": 2232,
+      "free_s": 1965,
+      "delay_min": 4.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 12,
+      "hist_s": 2235,
+      "free_s": 1965,
+      "delay_min": 4.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 13,
+      "hist_s": 2218,
+      "free_s": 1965,
+      "delay_min": 4.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 14,
+      "hist_s": 2207,
+      "free_s": 1965,
+      "delay_min": 4.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 15,
+      "hist_s": 2197,
+      "free_s": 1965,
+      "delay_min": 3.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 16,
+      "hist_s": 2183,
+      "free_s": 1965,
+      "delay_min": 3.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 17,
+      "hist_s": 2156,
+      "free_s": 1965,
+      "delay_min": 3.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 18,
+      "hist_s": 2120,
+      "free_s": 1965,
+      "delay_min": 2.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 19,
+      "hist_s": 2078,
+      "free_s": 1965,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 20,
+      "hist_s": 2044,
+      "free_s": 1965,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 21,
+      "hist_s": 2013,
+      "free_s": 1965,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 22,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 23,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 0,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 1,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 2,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 3,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 4,
+      "hist_s": 1981,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 5,
+      "hist_s": 1989,
+      "free_s": 1965,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 6,
+      "hist_s": 2015,
+      "free_s": 1965,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 7,
+      "hist_s": 2082,
+      "free_s": 1965,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 8,
+      "hist_s": 2131,
+      "free_s": 1965,
+      "delay_min": 2.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 9,
+      "hist_s": 2116,
+      "free_s": 1965,
+      "delay_min": 2.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 10,
+      "hist_s": 2090,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 11,
+      "hist_s": 2095,
+      "free_s": 1965,
+      "delay_min": 2.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 12,
+      "hist_s": 2090,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 13,
+      "hist_s": 2085,
+      "free_s": 1965,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 14,
+      "hist_s": 2084,
+      "free_s": 1965,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 15,
+      "hist_s": 2086,
+      "free_s": 1965,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 16,
+      "hist_s": 2090,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 17,
+      "hist_s": 2092,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 18,
+      "hist_s": 2080,
+      "free_s": 1965,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 19,
+      "hist_s": 2055,
+      "free_s": 1965,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 20,
+      "hist_s": 2032,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 21,
+      "hist_s": 2004,
+      "free_s": 1965,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 22,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Вт",
+      "hour": 23,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 0,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 1,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 2,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 3,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 4,
+      "hist_s": 1981,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 5,
+      "hist_s": 1988,
+      "free_s": 1965,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 6,
+      "hist_s": 2014,
+      "free_s": 1965,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 7,
+      "hist_s": 2067,
+      "free_s": 1965,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 8,
+      "hist_s": 2110,
+      "free_s": 1965,
+      "delay_min": 2.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 9,
+      "hist_s": 2110,
+      "free_s": 1965,
+      "delay_min": 2.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 10,
+      "hist_s": 2101,
+      "free_s": 1965,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 11,
+      "hist_s": 2107,
+      "free_s": 1965,
+      "delay_min": 2.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 12,
+      "hist_s": 2096,
+      "free_s": 1965,
+      "delay_min": 2.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 13,
+      "hist_s": 2088,
+      "free_s": 1965,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 14,
+      "hist_s": 2092,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 15,
+      "hist_s": 2096,
+      "free_s": 1965,
+      "delay_min": 2.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 16,
+      "hist_s": 2101,
+      "free_s": 1965,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 17,
+      "hist_s": 2106,
+      "free_s": 1965,
+      "delay_min": 2.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 18,
+      "hist_s": 2089,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 19,
+      "hist_s": 2049,
+      "free_s": 1965,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 20,
+      "hist_s": 2024,
+      "free_s": 1965,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 21,
+      "hist_s": 2001,
+      "free_s": 1965,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 22,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Ср",
+      "hour": 23,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 0,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 1,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 2,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 3,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 4,
+      "hist_s": 1982,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 5,
+      "hist_s": 2003,
+      "free_s": 1965,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 6,
+      "hist_s": 2049,
+      "free_s": 1965,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 7,
+      "hist_s": 2102,
+      "free_s": 1965,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 8,
+      "hist_s": 2142,
+      "free_s": 1965,
+      "delay_min": 3.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 9,
+      "hist_s": 2144,
+      "free_s": 1965,
+      "delay_min": 3.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 10,
+      "hist_s": 2142,
+      "free_s": 1965,
+      "delay_min": 3.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 11,
+      "hist_s": 2153,
+      "free_s": 1965,
+      "delay_min": 3.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 12,
+      "hist_s": 2133,
+      "free_s": 1965,
+      "delay_min": 2.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 13,
+      "hist_s": 2116,
+      "free_s": 1965,
+      "delay_min": 2.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 14,
+      "hist_s": 2118,
+      "free_s": 1965,
+      "delay_min": 2.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 15,
+      "hist_s": 2119,
+      "free_s": 1965,
+      "delay_min": 2.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 16,
+      "hist_s": 2115,
+      "free_s": 1965,
+      "delay_min": 2.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 17,
+      "hist_s": 2105,
+      "free_s": 1965,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 18,
+      "hist_s": 2079,
+      "free_s": 1965,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 19,
+      "hist_s": 2043,
+      "free_s": 1965,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 20,
+      "hist_s": 2024,
+      "free_s": 1965,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 21,
+      "hist_s": 2003,
+      "free_s": 1965,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 22,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Чет",
+      "hour": 23,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 0,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 1,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 2,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 3,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 4,
+      "hist_s": 1982,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 5,
+      "hist_s": 1990,
+      "free_s": 1965,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 6,
+      "hist_s": 2017,
+      "free_s": 1965,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 7,
+      "hist_s": 2072,
+      "free_s": 1965,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 8,
+      "hist_s": 2124,
+      "free_s": 1965,
+      "delay_min": 2.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 9,
+      "hist_s": 2125,
+      "free_s": 1965,
+      "delay_min": 2.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 10,
+      "hist_s": 2137,
+      "free_s": 1965,
+      "delay_min": 2.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 11,
+      "hist_s": 2151,
+      "free_s": 1965,
+      "delay_min": 3.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 12,
+      "hist_s": 2138,
+      "free_s": 1965,
+      "delay_min": 2.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 13,
+      "hist_s": 2128,
+      "free_s": 1965,
+      "delay_min": 2.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 14,
+      "hist_s": 2139,
+      "free_s": 1965,
+      "delay_min": 2.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 15,
+      "hist_s": 2154,
+      "free_s": 1965,
+      "delay_min": 3.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 16,
+      "hist_s": 2164,
+      "free_s": 1965,
+      "delay_min": 3.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 17,
+      "hist_s": 2167,
+      "free_s": 1965,
+      "delay_min": 3.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 18,
+      "hist_s": 2144,
+      "free_s": 1965,
+      "delay_min": 3.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 19,
+      "hist_s": 2095,
+      "free_s": 1965,
+      "delay_min": 2.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 20,
+      "hist_s": 2060,
+      "free_s": 1965,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 21,
+      "hist_s": 2022,
+      "free_s": 1965,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 22,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Пет",
+      "hour": 23,
+      "hist_s": 1965,
+      "free_s": 1965,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 0,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 1,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 2,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 3,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 4,
+      "hist_s": 1987,
+      "free_s": 1965,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 5,
+      "hist_s": 2005,
+      "free_s": 1965,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 6,
+      "hist_s": 2036,
+      "free_s": 1965,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 7,
+      "hist_s": 2091,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 8,
+      "hist_s": 2124,
+      "free_s": 1965,
+      "delay_min": 2.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 9,
+      "hist_s": 2124,
+      "free_s": 1965,
+      "delay_min": 2.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 10,
+      "hist_s": 2142,
+      "free_s": 1965,
+      "delay_min": 3.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 11,
+      "hist_s": 2153,
+      "free_s": 1965,
+      "delay_min": 3.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 12,
+      "hist_s": 2125,
+      "free_s": 1965,
+      "delay_min": 2.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 13,
+      "hist_s": 2103,
+      "free_s": 1965,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 14,
+      "hist_s": 2102,
+      "free_s": 1965,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 15,
+      "hist_s": 2097,
+      "free_s": 1965,
+      "delay_min": 2.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 16,
+      "hist_s": 2092,
+      "free_s": 1965,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 17,
+      "hist_s": 2083,
+      "free_s": 1965,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 18,
+      "hist_s": 2061,
+      "free_s": 1965,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 19,
+      "hist_s": 2033,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 20,
+      "hist_s": 2019,
+      "free_s": 1965,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 21,
+      "hist_s": 2001,
+      "free_s": 1965,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 22,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Съб",
+      "hour": 23,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 0,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 1,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 2,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 3,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 4,
+      "hist_s": 1983,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 5,
+      "hist_s": 1985,
+      "free_s": 1965,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 6,
+      "hist_s": 1987,
+      "free_s": 1965,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 7,
+      "hist_s": 2001,
+      "free_s": 1965,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 8,
+      "hist_s": 2013,
+      "free_s": 1965,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 9,
+      "hist_s": 2020,
+      "free_s": 1965,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 10,
+      "hist_s": 2030,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 11,
+      "hist_s": 2039,
+      "free_s": 1965,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 12,
+      "hist_s": 2038,
+      "free_s": 1965,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 13,
+      "hist_s": 2035,
+      "free_s": 1965,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 14,
+      "hist_s": 2034,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 15,
+      "hist_s": 2030,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 16,
+      "hist_s": 2032,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 17,
+      "hist_s": 2033,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 18,
+      "hist_s": 2031,
+      "free_s": 1965,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 19,
+      "hist_s": 2015,
+      "free_s": 1965,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 20,
+      "hist_s": 2004,
+      "free_s": 1965,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 21,
+      "hist_s": 1992,
+      "free_s": 1965,
+      "delay_min": 0.5
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 22,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "south_Kulata",
+      "weekday": "Нед",
+      "hour": 23,
+      "hist_s": 1972,
+      "free_s": 1965,
+      "delay_min": 0.1
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 4,
+      "hist_s": 1961,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 5,
+      "hist_s": 1988,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 6,
+      "hist_s": 2031,
+      "free_s": 1945,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 7,
+      "hist_s": 2025,
+      "free_s": 1945,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 8,
+      "hist_s": 2036,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 9,
+      "hist_s": 2037,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 10,
+      "hist_s": 2047,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 11,
+      "hist_s": 2054,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 12,
+      "hist_s": 2050,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 13,
+      "hist_s": 2046,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 14,
+      "hist_s": 2050,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 15,
+      "hist_s": 2068,
+      "free_s": 1945,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 16,
+      "hist_s": 2090,
+      "free_s": 1945,
+      "delay_min": 2.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 17,
+      "hist_s": 2091,
+      "free_s": 1945,
+      "delay_min": 2.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 18,
+      "hist_s": 2065,
+      "free_s": 1945,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 19,
+      "hist_s": 2030,
+      "free_s": 1945,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 20,
+      "hist_s": 2007,
+      "free_s": 1945,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 21,
+      "hist_s": 1981,
+      "free_s": 1945,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пон",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 4,
+      "hist_s": 1962,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 5,
+      "hist_s": 1990,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 6,
+      "hist_s": 2036,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 7,
+      "hist_s": 2035,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 8,
+      "hist_s": 2036,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 9,
+      "hist_s": 2034,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 10,
+      "hist_s": 2041,
+      "free_s": 1945,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 11,
+      "hist_s": 2043,
+      "free_s": 1945,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 12,
+      "hist_s": 2035,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 13,
+      "hist_s": 2030,
+      "free_s": 1945,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 14,
+      "hist_s": 2034,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 15,
+      "hist_s": 2039,
+      "free_s": 1945,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 16,
+      "hist_s": 2058,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 17,
+      "hist_s": 2077,
+      "free_s": 1945,
+      "delay_min": 2.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 18,
+      "hist_s": 2064,
+      "free_s": 1945,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 19,
+      "hist_s": 2023,
+      "free_s": 1945,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 20,
+      "hist_s": 2001,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 21,
+      "hist_s": 1977,
+      "free_s": 1945,
+      "delay_min": 0.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Вт",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 4,
+      "hist_s": 1962,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 5,
+      "hist_s": 1996,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 6,
+      "hist_s": 2060,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 7,
+      "hist_s": 2047,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 8,
+      "hist_s": 2045,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 9,
+      "hist_s": 2049,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 10,
+      "hist_s": 2057,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 11,
+      "hist_s": 2062,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 12,
+      "hist_s": 2056,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 13,
+      "hist_s": 2051,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 14,
+      "hist_s": 2052,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 15,
+      "hist_s": 2051,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 16,
+      "hist_s": 2057,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 17,
+      "hist_s": 2066,
+      "free_s": 1945,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 18,
+      "hist_s": 2054,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 19,
+      "hist_s": 2023,
+      "free_s": 1945,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 20,
+      "hist_s": 2004,
+      "free_s": 1945,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 21,
+      "hist_s": 1979,
+      "free_s": 1945,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Ср",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 4,
+      "hist_s": 1962,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 5,
+      "hist_s": 1989,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 6,
+      "hist_s": 2031,
+      "free_s": 1945,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 7,
+      "hist_s": 2040,
+      "free_s": 1945,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 8,
+      "hist_s": 2056,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 9,
+      "hist_s": 2055,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 10,
+      "hist_s": 2061,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 11,
+      "hist_s": 2066,
+      "free_s": 1945,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 12,
+      "hist_s": 2056,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 13,
+      "hist_s": 2051,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 14,
+      "hist_s": 2054,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 15,
+      "hist_s": 2055,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 16,
+      "hist_s": 2062,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 17,
+      "hist_s": 2071,
+      "free_s": 1945,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 18,
+      "hist_s": 2056,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 19,
+      "hist_s": 2020,
+      "free_s": 1945,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 20,
+      "hist_s": 2001,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 21,
+      "hist_s": 1979,
+      "free_s": 1945,
+      "delay_min": 0.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Чет",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 4,
+      "hist_s": 1963,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 5,
+      "hist_s": 1989,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 6,
+      "hist_s": 2025,
+      "free_s": 1945,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 7,
+      "hist_s": 2031,
+      "free_s": 1945,
+      "delay_min": 1.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 8,
+      "hist_s": 2043,
+      "free_s": 1945,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 9,
+      "hist_s": 2041,
+      "free_s": 1945,
+      "delay_min": 1.6
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 10,
+      "hist_s": 2049,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 11,
+      "hist_s": 2053,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 12,
+      "hist_s": 2049,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 13,
+      "hist_s": 2047,
+      "free_s": 1945,
+      "delay_min": 1.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 14,
+      "hist_s": 2052,
+      "free_s": 1945,
+      "delay_min": 1.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 15,
+      "hist_s": 2059,
+      "free_s": 1945,
+      "delay_min": 1.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 16,
+      "hist_s": 2072,
+      "free_s": 1945,
+      "delay_min": 2.1
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 17,
+      "hist_s": 2081,
+      "free_s": 1945,
+      "delay_min": 2.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 18,
+      "hist_s": 2067,
+      "free_s": 1945,
+      "delay_min": 2.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 19,
+      "hist_s": 2034,
+      "free_s": 1945,
+      "delay_min": 1.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 20,
+      "hist_s": 2011,
+      "free_s": 1945,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 21,
+      "hist_s": 1984,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Пет",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 4,
+      "hist_s": 1959,
+      "free_s": 1945,
+      "delay_min": 0.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 5,
+      "hist_s": 1961,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 6,
+      "hist_s": 1972,
+      "free_s": 1945,
+      "delay_min": 0.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 7,
+      "hist_s": 1995,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 8,
+      "hist_s": 1999,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 9,
+      "hist_s": 1990,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 10,
+      "hist_s": 1996,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 11,
+      "hist_s": 2003,
+      "free_s": 1945,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 12,
+      "hist_s": 2002,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 13,
+      "hist_s": 2004,
+      "free_s": 1945,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 14,
+      "hist_s": 2006,
+      "free_s": 1945,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 15,
+      "hist_s": 2011,
+      "free_s": 1945,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 16,
+      "hist_s": 2018,
+      "free_s": 1945,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 17,
+      "hist_s": 2025,
+      "free_s": 1945,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 18,
+      "hist_s": 2020,
+      "free_s": 1945,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 19,
+      "hist_s": 2000,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 20,
+      "hist_s": 1986,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 21,
+      "hist_s": 1971,
+      "free_s": 1945,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Съб",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 0,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 1,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 2,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 3,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 4,
+      "hist_s": 1958,
+      "free_s": 1945,
+      "delay_min": 0.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 5,
+      "hist_s": 1959,
+      "free_s": 1945,
+      "delay_min": 0.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 6,
+      "hist_s": 1964,
+      "free_s": 1945,
+      "delay_min": 0.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 7,
+      "hist_s": 1971,
+      "free_s": 1945,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 8,
+      "hist_s": 1975,
+      "free_s": 1945,
+      "delay_min": 0.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 9,
+      "hist_s": 1976,
+      "free_s": 1945,
+      "delay_min": 0.5
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 10,
+      "hist_s": 1984,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 11,
+      "hist_s": 1990,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 12,
+      "hist_s": 1991,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 13,
+      "hist_s": 1996,
+      "free_s": 1945,
+      "delay_min": 0.8
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 14,
+      "hist_s": 1998,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 15,
+      "hist_s": 2003,
+      "free_s": 1945,
+      "delay_min": 1.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 16,
+      "hist_s": 2011,
+      "free_s": 1945,
+      "delay_min": 1.1
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 17,
+      "hist_s": 2022,
+      "free_s": 1945,
+      "delay_min": 1.3
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 18,
+      "hist_s": 2019,
+      "free_s": 1945,
+      "delay_min": 1.2
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 19,
+      "hist_s": 2000,
+      "free_s": 1945,
+      "delay_min": 0.9
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 20,
+      "hist_s": 1987,
+      "free_s": 1945,
+      "delay_min": 0.7
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 21,
+      "hist_s": 1971,
+      "free_s": 1945,
+      "delay_min": 0.4
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 22,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
+    },
+    {
+      "direction": "north_Sofia",
+      "weekday": "Нед",
+      "hour": 23,
+      "hist_s": 1945,
+      "free_s": 1945,
+      "delay_min": 0.0
     }
-  ],
-  "_debug_total_calls": 336,
-  "_debug_points_ok": 0
+  ]
 }
