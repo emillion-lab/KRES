@@ -1,0 +1,5 @@
+timestamp,posoka,vid,zabaviane_min,ptp,meteo,prichina_kategoria,iztochnik,verified
+2025-05-01 16:30,Kulata,strukturna_tapa,75,0,slanchevo,Kapacitet/Praznik (1 i 6 mai),BNT 01.05.2025,unverified
+2025-06-28 15:30,dvete,strukturna_tapa,120,0,slanchevo,Kapacitet/Peshehodna pateka Kresna,Struma/Darik 28.06.2025,verified_multi_source
+2025-11-21 10:04,dvete,srutvane,60,0,dazhd,Prirodni/Skalno srutvane (km 392),Struma 21.11.2025,verified_exact_match
+2025-11-23 12:56,Kulata,srutvane,45,0,dazhd,Prirodni/Padnali kamani,News.bg 23.11.2025,unverified
