@@ -1,6 +1,55 @@
 {
-  "generated": "2026-09-01T00:12:11.075860+03:00",
+  "generated": "2026-09-01T00:17:36.272728+03:00",
   "source": "tomtom_historic_model",
   "note": "TomTom-ов изгладен профил, не собствено събрани данни. Не хваща еднократни инциденти (срутвания, ПТП).",
-  "points": []
+  "points": [],
+  "_debug_first_errors": [
+    {
+      "kind": "HTTPError",
+      "status": 403,
+      "body": "error code: 1010\n",
+      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T00%3A00%3A00%2B03%3A00",
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 0
+    },
+    {
+      "kind": "HTTPError",
+      "status": 403,
+      "body": "error code: 1010\n",
+      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T01%3A00%3A00%2B03%3A00",
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 1
+    },
+    {
+      "kind": "HTTPError",
+      "status": 403,
+      "body": "error code: 1010\n",
+      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T02%3A00%3A00%2B03%3A00",
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 2
+    },
+    {
+      "kind": "HTTPError",
+      "status": 403,
+      "body": "error code: 1010\n",
+      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T03%3A00%3A00%2B03%3A00",
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 3
+    },
+    {
+      "kind": "HTTPError",
+      "status": 403,
+      "body": "error code: 1010\n",
+      "url": "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic?from=41.8830%2C23.1122&to=41.7286%2C23.1553&departAt=2026-09-07T04%3A00%3A00%2B03%3A00",
+      "direction": "south_Kulata",
+      "weekday": "Пон",
+      "hour": 4
+    }
+  ],
+  "_debug_total_calls": 336,
+  "_debug_points_ok": 0
 }
