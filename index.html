@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KRES — Кресненско дефиле</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0e14">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141922; --panel2:#1b212c; --text:#e7ebf2; --muted:#8a93a3;
+    --green:#2ecc71; --yellow:#e6b800; --red:#e8543e; --border:#232a37;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding-bottom:32px;}
+  header{padding:18px 16px 10px;position:sticky;top:0;background:var(--bg);z-index:5;
+    border-bottom:1px solid var(--border);}
+  h1{font-size:1.15rem;margin:0 0 2px;font-weight:700;}
+  .sub{color:var(--muted);font-size:.82rem;margin:0;}
+  .status{display:flex;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;
+    background:var(--panel);border-radius:12px;font-size:.9rem;}
+  .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+  .dot.g{background:var(--green)} .dot.y{background:var(--yellow)} .dot.r{background:var(--red)} .dot.n{background:var(--muted)}
+  main{padding:14px 16px;max-width:640px;margin:0 auto;}
+  section{margin-bottom:22px;}
+  h2{font-size:.95rem;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;
+    margin:0 0 10px;font-weight:600;}
+  .dirtabs{display:flex;gap:8px;margin-bottom:14px;}
+  .dirtab{flex:1;padding:9px;border-radius:10px;background:var(--panel);border:1px solid var(--border);
+    color:var(--muted);text-align:center;font-size:.85rem;cursor:pointer;}
+  .dirtab.active{background:var(--panel2);color:var(--text);border-color:#3a4456;font-weight:600;}
+  .best{display:flex;flex-direction:column;gap:8px;}
+  .best-item{display:flex;align-items:center;gap:12px;background:var(--panel);border-radius:12px;
+    padding:12px 14px;}
+  .best-rank{width:26px;height:26px;border-radius:50%;background:var(--panel2);display:flex;
+    align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--muted);flex-shrink:0;}
+  .best-main{flex:1;}
+  .best-day{font-weight:700;font-size:.95rem;}
+  .best-time{color:var(--muted);font-size:.82rem;}
+  .best-delay{font-size:.85rem;font-weight:600;padding:3px 9px;border-radius:8px;white-space:nowrap;}
+  .grid-wrap{overflow-x:auto;background:var(--panel);border-radius:12px;padding:10px;}
+  table.heat{border-collapse:collapse;width:100%;font-size:.68rem;}
+  table.heat th{color:var(--muted);font-weight:600;padding:3px 2px;font-size:.66rem;position:sticky;top:0;}
+  table.heat td{text-align:center;padding:0;}
+  .hourlabel{color:var(--muted);text-align:right !important;padding-right:6px !important;font-size:.62rem;white-space:nowrap;}
+  .cell{width:100%;height:20px;border-radius:3px;display:flex;align-items:center;justify-content:center;
+    font-size:.6rem;color:rgba(0,0,0,.65);}
+  .legend{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:.72rem;color:var(--muted);}
+  .legend-bar{flex:1;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--yellow),var(--red));}
+  .note{font-size:.76rem;color:var(--muted);line-height:1.5;margin-top:8px;}
+  .install-btn{display:none;width:100%;padding:11px;border-radius:10px;background:var(--panel2);
+    color:var(--text);border:1px solid #3a4456;font-size:.88rem;margin-top:10px;cursor:pointer;}
+  .skeleton{color:var(--muted);font-size:.85rem;padding:14px;text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏔️ KRES</h1>
+  <p class="sub">Кресненско дефиле · Симитли – Кресна</p>
+  <div class="status" id="statusBox">
+    <span class="dot n"></span>
+    <span id="statusText">Зареждане на живото състояние…</span>
+  </div>
+  <button class="install-btn" id="installBtn">⬇️ Инсталирай на телефона</button>
+</header>
+
+<main>
+
+  <section>
+    <div class="dirtabs">
+      <div class="dirtab active" data-dir="south_Kulata">Юг · към Гърция</div>
+      <div class="dirtab" data-dir="north_Sofia">Север · към София</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Кога да тръгна</h2>
+    <div class="best" id="bestBox"><div class="skeleton">Зареждане…</div></div>
+  </section>
+
+  <section>
+    <h2>Седмица на един поглед</h2>
+    <div class="grid-wrap">
+      <div id="gridBox" class="skeleton">Зареждане…</div>
+    </div>
+    <div class="legend">
+      <span>0 мин</span>
+      <div class="legend-bar"></div>
+      <span id="legendMax">— мин</span>
+    </div>
+    <p class="note" id="sourceNote"></p>
+  </section>
+
+</main>
+
+<script>
+const DAYS = ["Пон","Вт","Ср","Чет","Пет","Съб","Нед"];
+const PROXY = "https://mvr-proxy.mihov-emil.workers.dev/traffic";
+const CORRIDOR_PTS = [
+  [41.8830,23.1122],[41.8590,23.1166],[41.8340,23.1230],
+  [41.8050,23.1290],[41.7750,23.1400],[41.7286,23.1553]
+];
+
+let profileData = null;
+let currentDir = "south_Kulata";
+
+function colorFor(ratio){ // 0..1 -> green..yellow..red
+  if (ratio <= 0.5){
+    const t = ratio/0.5;
+    return lerpColor([46,204,113],[230,184,0],t);
+  }
+  const t = (ratio-0.5)/0.5;
+  return lerpColor([230,184,0],[232,84,62],t);
+}
+function lerpColor(a,b,t){
+  const r=Math.round(a[0]+(b[0]-a[0])*t);
+  const g=Math.round(a[1]+(b[1]-a[1])*t);
+  const bl=Math.round(a[2]+(b[2]-a[2])*t);
+  return `rgb(${r},${g},${bl})`;
+}
+
+function pointsForDir(dir){
+  return (profileData?.points || []).filter(p => p.direction === dir);
+}
+
+function buildGrid(dir){
+  const pts = pointsForDir(dir);
+  const box = document.getElementById('gridBox');
+  if (!pts.length){ box.innerHTML = '<div class="skeleton">Няма данни още</div>'; return; }
+
+  const maxDelay = Math.max(0.5, ...pts.map(p => p.delay_min));
+  document.getElementById('legendMax').textContent = maxDelay.toFixed(1) + ' мин';
+
+  const byKey = {};
+  pts.forEach(p => byKey[p.weekday + ':' + p.hour] = p.delay_min);
+
+  const hours = [0,2,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+  let html = '<table class="heat"><thead><tr><th></th>';
+  DAYS.forEach(d => html += `<th>${d}</th>`);
+  html += '</tr></thead><tbody>';
+  hours.forEach(h => {
+    html += `<tr><td class="hourlabel">${String(h).padStart(2,'0')}ч</td>`;
+    DAYS.forEach(d => {
+      const val = byKey[d+':'+h];
+      const v = (val === undefined) ? 0 : val;
+      const ratio = Math.min(1, v / maxDelay);
+      const color = colorFor(ratio);
+      const label = v >= 0.5 ? Math.round(v) : '';
+      html += `<td><div class="cell" style="background:${color}">${label}</div></td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  box.innerHTML = html;
+}
+
+function bestWindows(dir, top=3, minGapHours=3){
+  const pts = pointsForDir(dir).slice().sort((a,b) => a.delay_min - b.delay_min);
+  const out = [];
+  const used = [];
+  for (const p of pts){
+    const idx = DAYS.indexOf(p.weekday)*24 + p.hour;
+    if (used.every(u => Math.abs(idx-u) >= minGapHours)){
+      used.push(idx);
+      out.push(p);
+    }
+    if (out.length === top) break;
+  }
+  return out;
+}
+
+function renderBest(dir){
+  const box = document.getElementById('bestBox');
+  const items = bestWindows(dir);
+  if (!items.length){ box.innerHTML = '<div class="skeleton">Няма данни още</div>'; return; }
+  const maxDelay = Math.max(0.5, ...pointsForDir(dir).map(p => p.delay_min));
+  box.innerHTML = items.map((it, i) => {
+    const ratio = Math.min(1, it.delay_min / maxDelay);
+    const color = colorFor(ratio);
+    return `<div class="best-item">
+      <div class="best-rank">${i+1}</div>
+      <div class="best-main">
+        <div class="best-day">${it.weekday} · ${String(it.hour).padStart(2,'0')}:00</div>
+        <div class="best-time">типично за случая</div>
+      </div>
+      <div class="best-delay" style="background:${color};color:rgba(0,0,0,.7)">+${it.delay_min.toFixed(1)} мин</div>
+    </div>`;
+  }).join('');
+}
+
+function render(){
+  buildGrid(currentDir);
+  renderBest(currentDir);
+}
+
+async function loadProfile(){
+  try{
+    const r = await fetch('data/historic_profile.json', {cache:'no-store'});
+    profileData = await r.json();
+    const note = document.getElementById('sourceNote');
+    const gen = profileData.generated ? new Date(profileData.generated).toLocaleDateString('bg-BG') : '?';
+    note.textContent = `Основано на TomTom исторически модел, обновен ${gen}. ` +
+      `Не хваща еднократни инциденти (срутвания, ПТП) — само типичния модел по ден/час.`;
+  }catch(e){
+    document.getElementById('gridBox').innerHTML = '<div class="skeleton">Още няма данни</div>';
+  }
+  render();
+}
+
+document.querySelectorAll('.dirtab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.dirtab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentDir = tab.dataset.dir;
+    render();
+  });
+});
+
+// Живо състояние — директно от браузъра (реален browser context, минава Cloudflare без проблем)
+async function loadLiveStatus(){
+  const box = document.getElementById('statusBox');
+  const dot = box.querySelector('.dot');
+  const text = document.getElementById('statusText');
+  try{
+    const pts = CORRIDOR_PTS.map(p => p.join(',')).join(';');
+    const r = await fetch(`${PROXY}?pts=${pts}`);
+    const d = await r.json();
+    const segs = (d.data || []).filter(s => s && !s.err && s.ratio != null);
+    if (!segs.length){ throw new Error('no segments'); }
+    const worst = Math.min(...segs.map(s => s.ratio));
+    const anyClosed = segs.some(s => s.closed);
+    dot.className = 'dot ' + (anyClosed || worst < 0.5 ? 'r' : worst < 0.8 ? 'y' : 'g');
+    text.textContent = anyClosed ? 'Затворен участък в момента'
+      : worst < 0.5 ? 'Тапа в момента — движението е силно затруднено'
+      : worst < 0.8 ? 'Натоварено движение в момента'
+      : 'Нормално движение в момента';
+  }catch(e){
+    dot.className = 'dot n';
+    text.textContent = 'Живото състояние временно не е достъпно';
+  }
+}
+
+// PWA install
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installBtn').style.display = 'block';
+});
+document.getElementById('installBtn').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  document.getElementById('installBtn').style.display = 'none';
+});
+
+if ('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+loadProfile();
+loadLiveStatus();
+</script>
+</body>
+</html>
