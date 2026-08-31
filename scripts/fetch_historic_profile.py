@@ -7,6 +7,10 @@
 
 Часова зона: Europe/Sofia през zoneinfo (не ръчен +3).
 
+ВАЖНО: mvr-proxy.mihov-emil.workers.dev е зад Cloudflare Browser Integrity
+Check. Автоматизирани клиенти без browser-подобни хедъри (Python-urllib
+подписа) се блокират с 403/error 1010 — затова спуфваме User-Agent/Accept.
+
 ДИАГНОСТИКА: грешките се записват В САМИЯ JSON (не само print), защото
 нямаме достъп до суровия Actions лог отвън."""
 import json
@@ -21,6 +25,8 @@ PROXY = "https://mvr-proxy.mihov-emil.workers.dev/traffic-historic"
 SIMITLI = "41.8830,23.1122"
 KRESNA = "41.7286,23.1553"
 SOFIA = ZoneInfo("Europe/Sofia")
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36")
 
 DAYS = ["Пон", "Вт", "Ср", "Чет", "Пет", "Съб", "Нед"]
 
@@ -38,7 +44,12 @@ def fetch_one(frm, to, depart_local):
     q = urllib.parse.urlencode({"from": frm, "to": to, "departAt": depart_str})
     full_url = f"{PROXY}?{q}"
     try:
-        with urllib.request.urlopen(full_url, timeout=25) as r:
+        req = urllib.request.Request(full_url, headers={
+            "User-Agent": UA,
+            "Accept": "application/json,text/plain,*/*",
+            "Accept-Language": "bg-BG,bg;q=0.9,en;q=0.8",
+        })
+        with urllib.request.urlopen(req, timeout=25) as r:
             return json.load(r), None
     except urllib.error.HTTPError as e:
         body = ""
@@ -90,11 +101,11 @@ def sweep():
                     "hist_s": hist_s, "free_s": free_s,
                     "delay_min": round((hist_s - free_s) / 60, 1),
                 })
-    return points, errors, len(errors) > 0 and len(points) == 0
+    return points, errors
 
 
 def main():
-    points, errors, _ = sweep()
+    points, errors = sweep()
     out = {"generated": datetime.now(SOFIA).isoformat(),
            "source": "tomtom_historic_model",
            "note": "TomTom-ов изгладен профил, не собствено събрани данни. "
