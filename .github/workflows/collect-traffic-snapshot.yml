@@ -3,6 +3,9 @@ name: collect-traffic-snapshot
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   snapshot:
     runs-on: ubuntu-latest
