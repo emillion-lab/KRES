@@ -13,18 +13,39 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Collect snapshot
+      - name: Debug — raw proxy response
+        continue-on-error: true
+        run: |
+          python3 - <<'PY'
+          import urllib.request, json
+          url = "https://mvr-proxy.mihov-emil.workers.dev/traffic?pts=41.8830,23.1122;41.8590,23.1166;41.8340,23.1230;41.8050,23.1290;41.7750,23.1400;41.7286,23.1553"
+          try:
+              with urllib.request.urlopen(url, timeout=25) as r:
+                  body = r.read().decode()
+                  status = r.status
+          except urllib.error.HTTPError as e:
+              status = e.code
+              body = e.read().decode()
+          except Exception as e:
+              status = "EXC"
+              body = repr(e)
+          with open("debug_traffic.txt", "w") as f:
+              f.write(f"status: {status}\n\n{body}")
+          PY
+
+      - name: Collect snapshot (real)
+        continue-on-error: true
         run: python3 scripts/collect.py
 
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ debug_traffic.txt || true
           if git diff --cached --quiet; then
             echo "no change"
           else
-            git commit -m "chore(data): traffic snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git commit -m "chore(data): traffic snapshot debug $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git fetch origin main && git rebase origin/main || git rebase --abort
             git push
           fi
