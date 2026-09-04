@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """KRES — Кресненско дефиле, I-1/E79. Пуска се на 15 мин от Actions.
 Минава през mvr-proxy /traffic — без собствен TomTom ключ.
-ВАЖНО: разделител между точки е ';', НЕ '|' (виж REM/cloudflare.md)."""
+ВАЖНО: разделител между точки е ';', НЕ '|' (виж REM/cloudflare.md).
+ВАЖНО: Cloudflare връща 403 (error 1010) на urllib подразбиращия се
+User-Agent — задължително подаваме браузърски UA на всяка заявка."""
 import json, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 PROXY = "https://mvr-proxy.mihov-emil.workers.dev/traffic"
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 # Точки по трасето, север -> юг (Симитли -> Кресна)
 POINTS = [
@@ -18,10 +22,14 @@ POINTS = [
     (41.7286, 23.1553),
 ]
 
+def _get(url, timeout):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.load(r)
+
 def fetch_segment_data(points):
     pts = ";".join(f"{la},{ln}" for la, ln in points)
-    with urllib.request.urlopen(f"{PROXY}?pts={pts}", timeout=25) as r:
-        return json.load(r)["data"]
+    return _get(f"{PROXY}?pts={pts}", 25)["data"]
 
 def weather():
     la, ln = POINTS[len(POINTS) // 2]
@@ -29,9 +37,7 @@ def weather():
         "latitude": la, "longitude": ln,
         "current": "temperature_2m,precipitation,weather_code,wind_speed_10m",
         "timezone": "UTC"})
-    with urllib.request.urlopen(
-            f"https://api.open-meteo.com/v1/forecast?{q}", timeout=20) as r:
-        c = json.load(r)["current"]
+    c = _get(f"https://api.open-meteo.com/v1/forecast?{q}", 20)["current"]
     return {"temp_c": c["temperature_2m"], "precip_mm": c["precipitation"],
             "wcode": c["weather_code"], "wind_kmh": c["wind_speed_10m"]}
 
