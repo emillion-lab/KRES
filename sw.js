@@ -1,4 +1,4 @@
-const CACHE = 'kres-v1';
+const CACHE = 'kres-v2';
 const CORE = ['./', './index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', (e) => {
